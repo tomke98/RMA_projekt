@@ -1,5 +1,6 @@
 package tomislav.ferit.rma_gymapp.ui.screens
 
+import android.util.Log
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
 import androidx.compose.runtime.*
@@ -34,7 +35,10 @@ fun ExerciseScreen(userViewModel: UserViewModel, navController: NavController) {
 
             Text(text = "You would need approximately $daysToLoseWeight days to reach your goal weight with $selectedExercise")
 
-            Button(onClick = { navController.navigate("inputScreen") }) {
+            Button(onClick = {
+                Log.d("ExerciseScreen", "Back to Input button clicked")
+                navController.navigate("inputScreen")
+            }) {
                 Text("Back to Input")
             }
         }
